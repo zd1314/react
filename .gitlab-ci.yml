@@ -1,0 +1,43 @@
+##
+# General CI Config.
+# author: Molay Chen
+##
+
+# Use node env
+image: node:latest
+
+# This folder is cached between builds
+cache:
+  untracked: true
+  paths:
+    - node_modules/
+
+# Init vis-evn for ci
+before_script:
+  - /vis-env/init
+
+# Stage: build --> test --> deploy
+stages:
+  - build
+  - test
+  - deploy
+
+buildJob:
+  stage: build
+  script:
+    - /vis-env/yarn-install
+    - unset CI
+    - yarn relate
+
+# In web application projects, we disable test stage tentatively.
+# Please enable test stage for library projects with unit test.
+.testJob:
+  stage: test
+  script:
+    - yarn test
+
+deployJob:
+  stage: deploy
+  script:
+    # deploy type(web|app|lib) module-name dist-folder
+    - /vis-env/deploy -d build

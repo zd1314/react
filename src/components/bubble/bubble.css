@@ -1,0 +1,37 @@
+/*城市信用 =======气泡图*/
+.bubble-wrap{
+  width:250px;
+  height:150px;
+  margin-top:55px;
+  margin-left:50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: center
+}
+
+.bubble-wrap span{
+  border-radius:100%;
+  display:block;
+  text-align: center;
+  color:#fff;
+  font-size: 16px;
+  margin-left: 25px;
+  margin-top: 1px
+}
+
+@keyframes myMove {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+.move {
+  animation: myMove 3s linear forwards;
+}

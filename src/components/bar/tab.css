@@ -1,0 +1,37 @@
+.homepage-map-tab-box {
+  position: absolute;
+  top:39px;
+  left: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.homepage-map-tab-item {
+  padding: 0 15px;
+  transform: skewX(-40deg);
+  /* background-image: url('./img/tab.png'); */
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.homepage-map-tab-item:nth-child(1){
+  margin-right: 15px
+}
+.homepage-map-tab-item:nth-child(3){
+  margin-left: 15px
+}
+.homepage-map-tab-item:hover {
+  color: #ffffff;
+  /* background-image: url("./img/tab-active.png"); */
+}
+
+.homepage-map-tab-item.active {
+  color: #ffffff;
+  /* background-image: url("./img/tab-active.png"); */
+}
+
+.homepage-map-tab-item span {
+  display: block;
+  transform: skew(30deg);
+}

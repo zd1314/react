@@ -1,0 +1,94 @@
+.select-box {
+  position: absolute;
+}
+
+.show-here {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  min-width: 138px;
+  font-size: 20px;
+  color: #e0fbff;
+  text-indent: 30px;
+  box-sizing: border-box;
+  border: 3px solid #12ffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: skewX(-30deg);
+  transform-origin: 50% 50%;
+}
+
+.show-here span {
+  display: block;
+  transform: skewX(30deg);
+  transform-origin: 50% 50%;
+}
+
+.show-here i {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  background: url("/static/image/select/arrow.png") no-repeat center;
+  transform: skewX(30deg) rotateZ(0deg);
+  transform-origin: 50% 50%;
+}
+
+.show-here .showi {
+  transform: skewX(30deg) rotateZ(180deg);
+  transition: transform 0.2s;
+}
+
+.show-here .hidei {
+  transform: skewX(30deg) rotateZ(0deg);
+  transition: transform 0.2s;
+}
+
+.select {
+  position: absolute;
+  z-index: 3;
+  background: rgba(0, 0, 0, .4);
+  width: calc(100% - 6px);
+  left: -9px;
+  transform-origin: 50% 0;
+  transform: scaleY(0);
+  border: 2px solid #12ffff;
+  border-top: none;
+  opacity: 0;
+  max-height: 175px;
+  overflow-y: scroll
+}
+
+.select::-webkit-scrollbar {
+  width: 4px;
+}
+
+.select li {
+  height: 38px;
+  line-height: 38px;
+  font-size: 18px;
+  color: #e0fbff;
+  text-align: center;
+  border-bottom: 1px solid #12ffff;
+  cursor: pointer;
+}
+
+.select li:hover {
+  color: #12ffff;
+}
+
+.select li:last-child {
+  border: none;
+}
+
+.slidedown {
+  transform: scaleY(1);
+  opacity: 1;
+  transition: transform 0.2s, opacity 0.1s;
+}
+
+.slideup {
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.1s;
+}

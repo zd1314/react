@@ -1,0 +1,24 @@
+.outerBg{
+  fill:pink
+}
+.background{
+  fill:red
+}
+.foreground{
+  fill:blue
+}
+#circle{
+  animation:move 2s ease-in 1s infinite alternate
+}
+@keyframes move{
+  form{
+    transform: scale(1)
+  }
+  to{
+    transform: scale(1.2)
+  }
+}
+/*css画指针*/
+.points{
+  
+}

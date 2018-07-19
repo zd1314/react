@@ -1,0 +1,82 @@
+.nav {
+  width: calc(100% - 60px);
+  height: 70px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav li {
+  height: 48px;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  color: #defbfb;
+  border: 2px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 2px solid transparent;
+  background-clip: padding-box,border-box;
+  background-origin:padding-box,border-box;
+  background-image:linear-gradient(rgba(0, 255, 42, 0),rgba(0,206,255,.5)),linear-gradient(rgba(0,206,255,0),rgba(0,206,255,.5));
+  /* background-image: linear-gradient( rgba(0,206,255,0.1),rgba(0,206,255,.6)); */
+}
+
+.nav li:nth-child(-n+3) {
+  width: 134px;
+  transform: skewX(40deg);
+  background-size: 100%;
+}
+
+.nav li:nth-child(-n+3) > div {
+  width: 114px;
+  height: 40px;
+  transform: translateX(8px);
+  border: 2px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 2px solid transparent;
+  background-clip: padding-box,border-box;
+  background-origin:padding-box,border-box;
+  background-image:linear-gradient(rgba(0,206,255,0),rgba(0,206,255,0)),linear-gradient(rgba(0,206,255,0),rgba(0,206,255,0.6));
+}
+
+.nav li:nth-child(-n+3) > div > p {
+  transform: skewX(-40deg);
+}
+
+.nav li:nth-child(n+4) {
+  width: 134px;
+  background-size: 100%;
+  transform: skewX(-40deg);
+}
+
+.nav li:nth-child(n+4) > div {
+  transform: skewX(40deg);
+}
+
+.nav li:nth-child(4) {
+  width: 300px;
+  line-height: 40px;
+  font-size: 22px;
+  color: #50f4ee;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transform: skewX(0deg);
+  margin: 0 18px;
+  background: transparent;
+  border: 0;
+}
+
+.nav li a {
+  display: inline-block;
+  height: 100%;
+  color: inherit;
+}
+
+.Allcontents {
+  position: absolute;
+  top: 70px;
+}

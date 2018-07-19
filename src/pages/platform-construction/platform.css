@@ -1,0 +1,7 @@
+.plat{
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(to bottom, red, blue);
+  -webkit-background-clip: text;
+  color: transparent;
+}

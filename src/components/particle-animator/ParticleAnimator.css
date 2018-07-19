@@ -1,0 +1,38 @@
+
+.textcontainer {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  left: 670px;
+  top: 100px;
+}
+.particletext {
+  text-align: center;
+  font-size: 48px;
+  position: relative;
+  color: floralwhite
+}
+.particle {
+  border-radius:100%;
+  display:block;
+  opacity: 1;
+  background-color: rgba(33, 150, 243, 0.8);
+  -webkit-animation: bubbles 3s ease-in infinite;
+          animation: bubbles 3s ease-in infinite;
+  border-radius: 100%;
+}
+@-webkit-keyframes bubbles {
+  0% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+  }
+  100% {
+    opacity: 0.5;
+    -webkit-transform: translate(0, -2000%);
+            transform: translate(0, -2000%);
+  }
+}
