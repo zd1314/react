@@ -29,8 +29,8 @@ class City extends Component {
         <Pie />
         <List style={{ width: '500', height: '370', position: 'absolute', left: '500', top: '100' }} ref={'listRef'} />
         <div style={me.styles}>
-          <Process color={'yellow'} ref={'scrollRef'} />
-          <Process color={'pink'} ref={'scrollRefs'} />
+          <Process color={'yellow'} ref={'scrollRef'} text={'可以储存'} textColor={'yellow'} />
+          <Process color={'pink'} ref={'scrollRefs'} text={'不可以储存'} textColor={'pink'} />
         </div>
       </div>
     )
@@ -45,7 +45,7 @@ class City extends Component {
     let me = this;
     /* test */
     me._tokens.push(api.test.send().then(res => {
-      console.log(res.test)
+
     }));
     let obj = {
       val: [100.00, 50.99, 20.11].sort(function (a, b) {

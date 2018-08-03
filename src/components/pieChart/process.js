@@ -58,7 +58,7 @@ class Process extends React.Component {
       })
       .attr('class', 'middleText')
       .attr('text-anchor', 'middle')
-      .attr('dy', 100)
+      .attr('dy', 130)
       .attr('dx', 88)
       .style('fill', '#fff')
       .style('font-size', 20)
@@ -66,10 +66,17 @@ class Process extends React.Component {
       .text('%')
       .attr('class', 'percent')
       .attr('text-anchor', 'middle')
-      .attr('dy', 100)
+      .attr('dy', 130)
       .attr('dx', 110)
       .style('fill', '#fff')
       .style('font-size', 14)
+    svg.append('text')
+      .text(this.props.text)
+      .attr('text-anchor', 'middle')
+      .attr('dy', 100)
+      .attr('dx', 98)
+      .style('fill', this.props.textColor)
+      .style('font-size', 16)
     //动画
     let arcTween = function (turn, changeAngle) {
       turn.duration(2000).attrTween("d", function (d) {
