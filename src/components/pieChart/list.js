@@ -58,23 +58,23 @@ class PieCircle extends Component {
       me.endAngle = -(3 / 2 * Math.PI);//270
       me.startAngle = 0;
       //定义每一个结束角度
-      // me.end1 = me.endAngle * (value[0] / 100)
-      // me.end2 = me.endAngle * (value[1] / 100)
-      // me.end3 = me.endAngle * (value[2] / 100)
+      me.end1 = me.endAngle * (value[0] / 100)
+      me.end2 = me.endAngle * (value[1] / 100)
+      me.end3 = me.endAngle * (value[2] / 100)
       //文字
       me._createTextName(`${value[0]}%`, 40, -100);
       me._createTextName(`${value[1]}%`, 40, -80);
       me._createTextName(`${value[2]}%`, 40, -60);
 
       me._list(value, 0.95, 0.9, 'red')
-      // me._createAll(me.startAngle, me.endAngle, '#214478', 0.95, 0.9);
-      // me._createHalf(me.startAngle, me.end1, '#018cfa', 0.95, 0.9);
+      me._createAll(me.startAngle, me.endAngle, '#214478', 0.95, 0.9);
+      me._createHalf(me.startAngle, me.end1, '#018cfa', 0.95, 0.9);
 
-      // me._createAll(me.startAngle, me.endAngle, '#214478', 0.8, 0.88);
-      // me._createHalf(me.startAngle, me.end2, '#04f38d', 0.8, 0.88);
+      me._createAll(me.startAngle, me.endAngle, '#214478', 0.8, 0.88);
+      me._createHalf(me.startAngle, me.end2, '#04f38d', 0.8, 0.88);
 
-      // me._createAll(me.startAngle, me.endAngle, '#214478', 0.65, 0.85);
-      // me._createHalf(me.startAngle, me.end3, '#ffef2f', 0.65, 0.85);
+      me._createAll(me.startAngle, me.endAngle, '#214478', 0.65, 0.85);
+      me._createHalf(me.startAngle, me.end3, '#ffef2f', 0.65, 0.85);
 
       me.flag = false;
     }
