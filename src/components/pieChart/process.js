@@ -39,19 +39,35 @@ class Process extends React.Component {
     let svg = d3.select(me.refs.chart).append('svg')
       .attr('width', w)
       .attr('height', h)
-      .attr('transform', `translate(${w / 2} ${h / 2})`)
+      .attr('transform', `translate(${w / 2} ${h / 2})`);
+    //渐变
+    let defs = svg.append('defs')
+    let linearGradient = defs.append('linearGradient')
+      .attr('id', this.props.id || 'linearGradient')
+      .attr("x1", "0%")
+      .attr("y1", "0%")
+      .attr("x2", "100%")
+      .attr("y2", "0%");
+    let stop1 = linearGradient.append('stop')
+      .attr('offset', '0%')
+      .style('stop-color', this.props.startColor)
+    let stop2 = linearGradient.append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', this.props.endColor)
+
+    //gggg
     let g = svg.append('g').attr('transform', `translate(${w / 2} ${h / 2})`)
     //大的背景图整个圆
     let bgAll = g.append('g').attr('class', 'all')
       .append('path')
       .attr('d', arcAll)
-      .attr('fill', 'green')
+      .attr('fill', '#6600CC')
     //动态的path跟数据有关
     let bgHalf = g.append('g').attr('class', 'half')
       .append('path')
       .datum({ endAngle: 0 })
       .attr('d', arcHalf)
-      .attr('fill', this.props.color)
+      .attr('fill', "url(#" + linearGradient.attr("id") + ")")
     //添加文字
     let middleText = svg.append('text')
       .text(function (d) {

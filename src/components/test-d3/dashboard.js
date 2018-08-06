@@ -31,14 +31,27 @@ class Dashboard extends React.Component {
             .attr('width', w)
             .attr('height', h)
             .attr('transform', `translate(${w / 2} ${h / 2})`);
-
+        //渐变色
+        let defs = svg.append('defs')
+        let linearGradient = defs.append('linearGradient')
+            .attr('id', this.props.id || 'linearGradient')
+            .attr("x1", "0%")
+            .attr("y1", "0%")
+            .attr("x2", "100%")
+            .attr("y2", "0%");
+        let stop1 = linearGradient.append('stop')
+            .attr('offset', '0%')
+            .style('stop-color', 'blue')
+        let stop2 = linearGradient.append('stop')
+            .attr('offset', '100%')
+            .style('stop-color', 'yellow')
         let g = svg.append('g').attr('transform', `translate(${w / 2} ${h / 2})`);
         let gWhole = g.append('g')
             .attr('class', 'whole')
             .append('path')
             .datum({ endAngle: arcMax })
             .attr('d', arc)
-            .attr('fill', 'blue')
+            .attr('fill', '#ccc')
             .attr('transform', 'rotate(1)');
         let currentAngle = 50 / 100 * (arcMax - arcMin) + arcMin; //结束角度
         let gPart = g.append('g')
@@ -46,7 +59,7 @@ class Dashboard extends React.Component {
             .append('path')
             .datum({ endAngle: arcMin })
             .attr('d', arc)
-            .attr('fill', 'pink')
+            .attr('fill', "url(#" + linearGradient.attr("id") + ")")
             .attr('transform', 'rotate(1)');
 
         let arcTween = function(turn, changeAngle) {

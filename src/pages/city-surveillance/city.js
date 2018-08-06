@@ -39,10 +39,10 @@ class City extends Component {
         <Pie />
         <List style={{ width: '500', height: '370', position: 'absolute', left: 40, top: 145 }} ref={'listRef'} />
         <div style={me.styles}>
-          <Process color={'aqua'} ref={'scrollRef'} text={'可以储存'} textColor={'aqua'} />
-          <Process color={'orange'} ref={'scrollRefs'} text={'不可以储存'} textColor={'orange'} />
+          <Process color={'aqua'} id={'oneLinear'} startColor={'orange'} endColor={'red'} ref={'scrollRef'} text={'可以储存'} textColor={'aqua'} />
+          <Process color={'orange'} id={'twoLinear'} startColor={'#00FF00'} endColor={'#00FA9A'} ref={'scrollRefs'} text={'不可以储存'} textColor={'orange'} />
         </div>
-        <Dashboard dashboard={me.dashboard} ref={'dashboardRef'} />
+        <Dashboard dashboard={me.dashboard} ref={'dashboardRef'} id={'linearGradient'} />
       </div>
     )
   };
