@@ -37,8 +37,8 @@ class PieCircle extends Component {
   }
   componentDidUpdate() {
     let me = this;
-    let width = 480;
-    let height = 480;
+    let width = 240;
+    let height = 240;
     if (me.flag) {
       let value = me.state.data.val;//占比
       let names = me.state.data.name//名字
@@ -49,12 +49,12 @@ class PieCircle extends Component {
         .attr('width', width)
         .attr('height', height);
       me._global = svg.append('g')
-        .attr('transform', `translate(${width / 4},${height / 4})`)
+        .attr('transform', `translate(${width / 2},${height / 2})`)
 
       me._global2 = svg.append('g')
-        .attr('transform', `translate(${width / 4},${height / 4})`);
+        .attr('transform', `translate(${width / 3},${height / 1.4})`);
 
-      me.maxRadius = Math.min(width, height) / 4;//半径
+      me.maxRadius = Math.min(width, height) / 3.5;//半径
       me.endAngle = -(3 / 2 * Math.PI);//270
       me.startAngle = 0;
       //定义每一个结束角度
@@ -144,9 +144,7 @@ class PieCircle extends Component {
       .duration(500)
       .attrTween('d', function (d) {
         return function (t) {
-          return me._arc(inRadius, outRadius, startAngle, function () {
-            return endAngle * t
-          }, padAngle)
+          return me._arc(inRadius, outRadius, startAngle, endAngle * t, padAngle)
         }
       })
       .attr('fill', color);

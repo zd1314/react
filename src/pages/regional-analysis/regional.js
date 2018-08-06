@@ -3,9 +3,8 @@ import * as api from '../../api/api-regional';
 import Panel from '../../components/panel/Panel'
 /* css */
 import './regional.css';
-// import PictorialBar from '../../components/bar/pictorialBar';
-// import Bar from '../../components/tabD3Charts/bar';
-import Test from '../../components/test/Test2'
+import PictorialBar from '../../components/bar/pictorialBar';
+import Bar from '../../components/tabD3Charts/bar';
 /*
 * 区域分析
 * */
@@ -33,9 +32,9 @@ class Regional extends Component {
     let me = this;
     return (
       <div>
-        <Test />
-        {/* <Bar style={me.svgStyle} /> */}
-        {/* < PictorialBar width={600} height={500} ref={'bars'} changeData={me._Click.bind(this)} /> */}
+        {/* <Test /> */}
+        <Bar style={me.svgStyle} />
+        < PictorialBar width={600} height={500} ref={'bars'} changeData={me._Click.bind(this)} />
       </div>
     )
   };

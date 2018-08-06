@@ -20,7 +20,7 @@ class Process extends React.Component {
   componentDidUpdate() {
     let me = this;
     let w = 200, h = 200;
-    let R = w / 2 - 20, r = 60;
+    let R = w / 2 - 50, r = 40;
     let percent = this.state.data;
     let ratio = percent / 100;
     let pie = d3.pie().value(function (d) { return d }).sort(null);
@@ -45,7 +45,7 @@ class Process extends React.Component {
     let bgAll = g.append('g').attr('class', 'all')
       .append('path')
       .attr('d', arcAll)
-      .attr('fill', 'blue')
+      .attr('fill', 'green')
     //动态的path跟数据有关
     let bgHalf = g.append('g').attr('class', 'half')
       .append('path')
@@ -58,15 +58,15 @@ class Process extends React.Component {
       })
       .attr('class', 'middleText')
       .attr('text-anchor', 'middle')
-      .attr('dy', 130)
+      .attr('dy', 120)
       .attr('dx', 88)
       .style('fill', '#fff')
-      .style('font-size', 20)
+      .style('font-size', 16)
     svg.append('text')
       .text('%')
       .attr('class', 'percent')
       .attr('text-anchor', 'middle')
-      .attr('dy', 130)
+      .attr('dy', 120)
       .attr('dx', 110)
       .style('fill', '#fff')
       .style('font-size', 14)
@@ -76,7 +76,7 @@ class Process extends React.Component {
       .attr('dy', 100)
       .attr('dx', 98)
       .style('fill', this.props.textColor)
-      .style('font-size', 16)
+      .style('font-size', 14)
     //动画
     let arcTween = function (turn, changeAngle) {
       turn.duration(2000).attrTween("d", function (d) {

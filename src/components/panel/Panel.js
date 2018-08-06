@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import URL from './title-bg.png';
 
 class Panel extends Component {
@@ -20,10 +20,10 @@ class Panel extends Component {
       // letterSpacing:'3px',
       // WebkitTextStroke: '1px #00486a',
       // WebkitTextFillColor: '#FFFFFF',
-      color:'#fff',
+      color: '#fff',
       // textShadow:'0px 0px 2px #00486a',
       // textIndent: '0.6rem',
-      background: 'url("' + URL + '") no-repeat left center',
+      background: 'url(" + URL + ") no-repeat left center',
       backgroundSize: 'contain'
     };
 
@@ -35,8 +35,8 @@ class Panel extends Component {
       // color: '#fff'
       // webkitTextStroke: '0px #00486a',
       // webkitTextFillColor: '#FFFFFF',
-      color:'#fff',
-      textShadow:'1px #00486a',
+      color: '#fff',
+      textShadow: '1px #00486a',
     }
   }
 

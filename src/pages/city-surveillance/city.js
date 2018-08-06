@@ -4,7 +4,8 @@ import * as api from '../../api/api-city';
 import './city.css';
 import Pie from '../../components/pieChart/pie';
 import List from '../../components/pieChart/list';
-import Process from '../../components/pieChart/process'
+import Process from '../../components/pieChart/process';
+import Dashboard from '../../components/test-d3/dashboard'
 /*
 * 城市监控
 * */
@@ -15,10 +16,19 @@ class City extends Component {
     me.state = {};
     me._tokens = [];
     me.styles = {
+      width: 300,
+      height: 300,
       position: 'absolute',
-      left: 261,
-      top: -77,
+      left: 140,
+      top: -108,
       display: 'flex'
+    };
+    me.dashboard = {
+      width: 200,
+      height: 200,
+      position: 'absolute',
+      left: 140,
+      top: 20
     }
   };
 
@@ -27,11 +37,12 @@ class City extends Component {
     return (
       <div className="Allcontents">
         <Pie />
-        <List style={{ width: '500', height: '370', position: 'absolute', left: '500', top: '100' }} ref={'listRef'} />
+        <List style={{ width: '500', height: '370', position: 'absolute', left: 40, top: 145 }} ref={'listRef'} />
         <div style={me.styles}>
-          <Process color={'yellow'} ref={'scrollRef'} text={'可以储存'} textColor={'yellow'} />
-          <Process color={'pink'} ref={'scrollRefs'} text={'不可以储存'} textColor={'pink'} />
+          <Process color={'aqua'} ref={'scrollRef'} text={'可以储存'} textColor={'aqua'} />
+          <Process color={'orange'} ref={'scrollRefs'} text={'不可以储存'} textColor={'orange'} />
         </div>
+        <Dashboard dashboard={me.dashboard} ref={'dashboardRef'} />
       </div>
     )
   };
