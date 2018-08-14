@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
         let ratio = 100 - percent;
         let arcMin = -Math.PI * 2 / 3;
         let arcMax = Math.PI * 2 / 3;//圆弧的起始角度和终止角度
-        let pie = d3.pie().value(function(d) { return d }).sort(null);
+        let pie = d3.pie().value(function (d) { return d }).sort(null);
         let arc = d3.arc()
             .innerRadius(r)
             .outerRadius(R)
@@ -62,16 +62,16 @@ class Dashboard extends React.Component {
             .attr('fill', "url(#" + linearGradient.attr("id") + ")")
             .attr('transform', 'rotate(1)');
 
-        let arcTween = function(turn, changeAngle) {
-            turn.duration(1000).attrTween("d", function(d) {
+        let arcTween = function (turn, changeAngle) {
+            turn.duration(1000).attrTween("d", function (d) {
                 let interpolate = d3.interpolate(d.endAngle, changeAngle);
-                return function(t) {
+                return function (t) {
                     d.endAngle = interpolate(t);
                     return arc(d);
                 };
             });
         };
-        let animate = function() {
+        let animate = function () {
             gPart.transition()
                 .duration(750)
                 .call(arcTween, currentAngle);

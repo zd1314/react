@@ -1,0 +1,55 @@
+.title-icon{
+  display: flex;
+  position: absolute;
+  right:10px;
+  top:10px;
+  color: #fff;
+  font-size: 14px
+}
+.title-icon>span:nth-child(2){
+  margin-left: 45px
+}
+.title-icon>span:nth-child(1)::before{
+  content:'';
+  display: block;
+  width: 15px;
+  height: 6px;
+  background: url(./img/iconL.png);
+  position: absolute;
+  left:-26px;
+  top:6px
+
+}
+.title-icon>span:nth-child(2)::before{
+  content:'';
+  display: block;
+  width: 15px;
+  height: 6px;
+  background: url(./img/iconR.png);
+  position: absolute;
+  right:36px;
+  top:6px
+
+}
+.content-animate{
+  position: relative;
+  margin-top: 27px;
+  width: 449px;
+  height: 259px;
+  font-size: #fff;
+  font-size: 18px
+}
+.left-items{
+  position: absolute;
+  left:15px;
+  top:17px;
+}
+.left-items>li>span:nth-child(1){
+  width: 33px;
+  height: 30px;
+  display: block;
+  background: url('./img/left-icon.png') no-repeat;
+  background-size:'100% 100%';
+  position: absolute;
+  
+}

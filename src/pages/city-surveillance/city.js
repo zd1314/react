@@ -5,7 +5,8 @@ import './city.css';
 import Pie from '../../components/pieChart/pie';
 import List from '../../components/pieChart/list';
 import Process from '../../components/pieChart/process';
-import Dashboard from '../../components/test-d3/dashboard'
+import Dashboard from '../../components/test-d3/dashboard';
+import Point from '../../components/test-d3/points'
 /*
 * 城市监控
 * */
@@ -30,6 +31,13 @@ class City extends Component {
       left: 140,
       top: 20
     }
+    me.point = {
+      width: 200,
+      height: 200,
+      position: 'absloute',
+      left: 140,
+      top: 50
+    }
   };
 
   render() {
@@ -43,6 +51,7 @@ class City extends Component {
           <Process color={'orange'} id={'twoLinear'} startColor={'#00FF00'} endColor={'#00FA9A'} ref={'scrollRefs'} text={'不可以储存'} textColor={'orange'} />
         </div>
         <Dashboard dashboard={me.dashboard} ref={'dashboardRef'} id={'linearGradient'} />
+        <Point styles={me.point} />
       </div>
     )
   };
