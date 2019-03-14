@@ -1,55 +1,323 @@
-.title-icon{
+.animate{
   display: flex;
-  position: absolute;
-  right:10px;
-  top:10px;
-  color: #fff;
-  font-size: 14px
-}
-.title-icon>span:nth-child(2){
-  margin-left: 45px
-}
-.title-icon>span:nth-child(1)::before{
-  content:'';
-  display: block;
-  width: 15px;
-  height: 6px;
-  background: url(./img/iconL.png);
-  position: absolute;
-  left:-26px;
-  top:6px
-
-}
-.title-icon>span:nth-child(2)::before{
-  content:'';
-  display: block;
-  width: 15px;
-  height: 6px;
-  background: url(./img/iconR.png);
-  position: absolute;
-  right:36px;
-  top:6px
-
-}
-.content-animate{
+  justify-content: center;
+  align-items: center;
   position: relative;
-  margin-top: 27px;
-  width: 449px;
-  height: 259px;
-  font-size: #fff;
-  font-size: 18px
+  top:10.6vh
 }
-.left-items{
+.animate div{
+  width: 80px;
+  height:80px;
+  border-radius: 0 130px;
+  background: lawngreen;
+  opacity: 0.5;
+  overflow: hidden;
   position: absolute;
-  left:15px;
-  top:17px;
+  margin-left: -40px;
+  transform-origin: 100% 100%
 }
-.left-items>li>span:nth-child(1){
-  width: 33px;
-  height: 30px;
-  display: block;
-  background: url('./img/left-icon.png') no-repeat;
-  background-size:'100% 100%';
-  position: absolute;
-  
+.animate div:nth-child(1){
+  animation: flip1 4.3s ease infinite;
+}
+.animate div:nth-child(2){
+  background: #f34;
+  animation: flip2 4.3s ease infinite;
+}
+.animate div:nth-child(3){
+  background:aqua;
+  animation: flip3 4.3s ease infinite;
+}
+.animate div:nth-child(4){
+  background: blueviolet;
+  animation: flip4 4.3s ease infinite;
+}
+.animate div:nth-child(5){
+  background:pink;
+  animation: flip5 4.3s ease infinite;
+}
+.animate div:nth-child(6){
+  background:brown;
+  animation: flip6 4.3s ease infinite;
+}
+.animate div:nth-child(7){
+  background:red;
+  animation: flip7 4.3s ease infinite;
+}
+
+.animate div:nth-child(8){
+  background:plum;
+  animation: flip8 4.3s ease infinite;
+}
+.animate div:nth-child(9){
+  background:lightcoral;
+  animation: flip9 4.3s ease infinite;
+}
+.animate div:nth-child(10){
+  background: orangered;
+  animation: flip10 4.3s ease infinite;
+}
+.animate div:nth-child(11){
+  background: olive;
+  animation: flip11 4.3s ease infinite;
+}
+.animate div:nth-child(12){
+  background: orchid;
+  animation: flip12 4.3s ease infinite;
+}
+.animate div:nth-child(13){
+  background: olivedrab;
+  animation: flip13 4.3s ease infinite;
+}
+.animate div:nth-child(14){
+  background: palevioletred;
+  animation: flip14 4.3s ease infinite;
+}
+.animate div:nth-child(15){
+  background: #333;
+  animation: flip15 4.3s ease infinite;
+}
+.animate div:nth-child(16){
+  background: yellow;
+  animation: flip16 4.3s ease infinite;
+}
+.animate div:nth-child(17){
+  background: hotpink;
+  animation: flip17 4.3s ease infinite;
+}
+
+
+@keyframes flip1 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(20deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip2 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(40deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip3 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(60deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip4 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(80deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip5 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(100deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip6 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(120deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip7 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(140deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip8 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(160deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip9 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip10 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(200deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip11 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(220deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip12 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(240deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip13 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(260deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip14 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(280deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip15 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(300deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip16 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(320deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+@keyframes flip17 {
+	from {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(340deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+/*旋转*/
+.circle{
+	position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-100px;
+  margin-left:-100px;
+  width:100px;
+  height:100px;
+  border: 1px dashed #EEE;
+  border-radius:50%;
+	}
+	
+	.circle1{
+		border-color:#D64541;
+		box-shadow:1px 1px 2px 0px #D64541, inset 1px 1px 2px 0px #D64541;
+		animation:rotate 3s linear infinite 0.5s;
+	}
+	.circle2{
+		border-color:#9A12B3;
+		box-shadow:1px 1px 2px 0px #9A12B3, inset 1px 1px 2px 0px #9A12B3;
+		animation:rotate 3s linear infinite 1s;
+	}
+	.circle3{
+		border-color:#22A7F0;
+		box-shadow:1px 1px 2px 0px #22A7F0, inset 1px 1px 2px 0px #22A7F0;
+		animation:rotate 3s linear infinite 1.5s;
+	}
+	.circle4{
+		border-color: #03C9A9;
+		box-shadow:1px 1px 2px 0px  #03C9A9, inset 1px 1px 2px 0px  #03C9A9;
+		animation:rotate 3s linear infinite 2s;
+	}
+	.circle5{
+		border-color:#F7CA18;
+		box-shadow:1px 1px 2px 0px #F7CA18, inset 1px 1px 2px 0px #F7CA18;
+		animation:rotate 3s linear infinite 2.5s;
+	} 
+
+
+@keyframes rotate{
+	0%{
+    transform: rotateY(0deg);
+  }
+  100%{
+    transform: rotateY(180deg);
+  }
 }

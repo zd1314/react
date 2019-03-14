@@ -16,6 +16,12 @@ class Process extends React.Component {
     return <div ref='chart'></div>
   }
   componentDidMount() {
+    const me = this;
+    let w = 200, h = 200;
+    me.svg = d3.select(me.refs.chart).append('svg')
+      .attr('width', w)
+      .attr('height', h)
+      .attr('transform', `translate(${w / 2} ${h / 2})`);
   }
   componentDidUpdate() {
     let me = this;
@@ -36,12 +42,9 @@ class Process extends React.Component {
       .outerRadius(R)
       .startAngle(0)
 
-    let svg = d3.select(me.refs.chart).append('svg')
-      .attr('width', w)
-      .attr('height', h)
-      .attr('transform', `translate(${w / 2} ${h / 2})`);
+
     //渐变
-    let defs = svg.append('defs')
+    let defs = me.svg.append('defs')
     let linearGradient = defs.append('linearGradient')
       .attr('id', this.props.id || 'linearGradient')
       .attr("x1", "0%")
@@ -56,7 +59,7 @@ class Process extends React.Component {
       .style('stop-color', this.props.endColor)
 
     //gggg
-    let g = svg.append('g').attr('transform', `translate(${w / 2} ${h / 2})`)
+    let g = me.svg.append('g').attr('transform', `translate(${w / 2} ${h / 2})`)
     //大的背景图整个圆
     let bgAll = g.append('g').attr('class', 'all')
       .append('path')
@@ -69,7 +72,7 @@ class Process extends React.Component {
       .attr('d', arcHalf)
       .attr('fill', "url(#" + linearGradient.attr("id") + ")")
     //添加文字
-    let middleText = svg.append('text')
+    let middleText = me.svg.append('text')
       .text(function (d) {
       })
       .attr('class', 'middleText')
@@ -78,7 +81,7 @@ class Process extends React.Component {
       .attr('dx', 88)
       .style('fill', '#fff')
       .style('font-size', 16)
-    svg.append('text')
+    me.svg.append('text')
       .text('%')
       .attr('class', 'percent')
       .attr('text-anchor', 'middle')
@@ -86,7 +89,7 @@ class Process extends React.Component {
       .attr('dx', 110)
       .style('fill', '#fff')
       .style('font-size', 14)
-    svg.append('text')
+    me.svg.append('text')
       .text(this.props.text)
       .attr('text-anchor', 'middle')
       .attr('dy', 100)

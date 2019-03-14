@@ -3,9 +3,7 @@ import {arc, pie, select,selectAll} from 'd3';
 const middle = [1];
 
 /**
- * 人民幸福--居民住院率--床位使用率
- * 单圈圆
- * zll
+圆形进度条
  */
 class Circle extends Component {
   constructor(props){

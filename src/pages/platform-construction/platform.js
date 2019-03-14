@@ -23,7 +23,9 @@ import InstrumentPanel from '../../components/pieChart/instrumentPanel'
 import BubbleDiagram from '../../components/d3/bubbleDiagram'
 /**单选按钮 */
 import Btns from '../../components/common/btn1';
-
+/**树叶 */
+import Envionmental from '../../components/animate/environmentalCarrying'
+import Rotate from '../../components/animate/rotate'
 /*
 * 平台建设
 * */
@@ -103,6 +105,20 @@ class Platform extends Component {
       top: 400,
       position: 'absolute'
     }
+    me.leaf = {
+      width: 200,
+      height: 200,
+      left: 750,
+      top: 400,
+      position: 'absolute'
+    }
+    me.rotate = {
+      width: 200,
+      height: 200,
+      left: 600,
+      top: 500,
+      position: 'absolute'
+    }
   };
   render() {
     let me = this;
@@ -153,7 +169,12 @@ class Platform extends Component {
           < Btns width={15} height={15} top={6} left={0} />
         </Panel>
 
-
+        <Panel title="叶子" style={me.leaf}>
+          <Envionmental />
+        </Panel>
+        <Panel title="旋转" style={me.rotate}>
+          <Rotate />
+        </Panel>
       </div>
     )
   };

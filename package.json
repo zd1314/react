@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.0",
-    "d3": "^4.11.0",
-    "echarts": "^3.8.5",
+    "d3": "^5.9.1",
+    "echarts": "^4.1.0",
     "echarts-liquidfill": "^2.0.0",
     "echarts-wordcloud": "^1.1.2",
     "global": "^4.3.2",

@@ -38,26 +38,26 @@ class ProgressBar extends Component {
       .attr('dominant-baseline', 'middle')/**垂直居中 */
       .attr('font-size', '24px')
     let colorLinear = d3.scaleLinear().domain([0, 100]).range(["yellow", "blue"]);
-    d3.interval(function () {
-      upperGround.transition().duration(750).attrTween('d', function (d) {
-        let compute = d3.interpolate(d.endAngle, Math.random() * Math.PI * 2);
-        return function (t) {
-          d.endAngle = compute(t);
-          let data = d.endAngle / Math.PI / 2 * 100;
-          //设置数值
-          svgDom.select('text').text(data.toFixed(0) + '%');
-          //将新参数传入，生成新的圆弧构造器
-          return arcGenerator(d);
-        }
-      })
-        .styleTween('fill', function (d) {
-          return function (t) {
-            let data = d.endAngle / Math.PI / 2 * 100;
-            //返回数值对应的色值
-            return colorLinear(data);
-          }
-        })
-    }, 3000)
+    // d3.interval(function () {
+    //   upperGround.transition().duration(750).attrTween('d', function (d) {
+    //     let compute = d3.interpolate(d.endAngle, Math.random() * Math.PI * 2);
+    //     return function (t) {
+    //       d.endAngle = compute(t);
+    //       let data = d.endAngle / Math.PI / 2 * 100;
+    //       //设置数值
+    //       svgDom.select('text').text(data.toFixed(0) + '%');
+    //       //将新参数传入，生成新的圆弧构造器
+    //       return arcGenerator(d);
+    //     }
+    //   })
+    //     .styleTween('fill', function (d) {
+    //       return function (t) {
+    //         let data = d.endAngle / Math.PI / 2 * 100;
+    //         //返回数值对应的色值
+    //         return colorLinear(data);
+    //       }
+    //     })
+    // }, 3000)
   }
   componentDidUpdate() {
   };
