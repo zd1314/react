@@ -3,17 +3,17 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top:10.6vh
+  top:4.6vh
 }
 .animate div{
-  width: 80px;
-  height:80px;
-  border-radius: 0 130px;
+  width: 60px;
+  height:60px;
+  border-radius: 0 110px;
   background: lawngreen;
   opacity: 0.5;
   overflow: hidden;
   position: absolute;
-  margin-left: -40px;
+  margin-left: 25px;
   transform-origin: 100% 100%
 }
 .animate div:nth-child(1){
@@ -276,8 +276,8 @@
 /*旋转*/
 .circle{
 	position:absolute;
-  top:50%;
-  left:50%;
+  top:79%;
+  left:38%;
   margin-top:-100px;
   margin-left:-100px;
   width:100px;
@@ -320,4 +320,55 @@
   100%{
     transform: rotateY(180deg);
   }
+}
+/* 动画 */
+#main{
+	position: absolute;
+	width: 320px;
+	height: 160px;
+	margin-top: -8px;
+	margin-left: calc(50% - 144px);
+	animation: animates 3s linear infinite;
+}
+.waterdrop{
+  position: absolute;
+  width:130px;
+  height:160px;
+  margin-left: calc(50% - 65px);
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+.tomato{
+  border-bottom: 1px solid tomato; 
+  transform: rotate(0deg);
+  background: linear-gradient(15deg,tomato 0,tomato 20%,transparent 0,transparent 28%,rgba(255,255,255,0.1) 50%,transparent 72%,transparent 82.5%,tomato 0);
+}
+.aqua{
+	border-bottom: 1px solid aqua; 
+  transform: rotate(72deg);
+  background: linear-gradient(15deg,aqua 0,aqua 20%,transparent 0,transparent 28%,rgba(255,255,255,0.1) 50%,transparent 72%,transparent 82.5%,aqua 0);
+}
+.gold{
+	border-bottom: 1px solid gold; 
+  transform: rotate(144deg);
+  background: linear-gradient(15deg,gold 0,gold 20%,transparent 0,transparent 28%,rgba(255,255,255,0.1) 50%,transparent 72%,transparent 82.5%,gold 0);
+}
+.lightgreen{
+	border-bottom: 1px solid lightgreen; 
+  transform: rotate(216deg);
+  background: linear-gradient(15deg,lightgreen 0,lightgreen 20%,transparent 0,transparent 28%,rgba(255,255,255,0.1) 50%,transparent 72%,transparent 82.5%,lightgreen 0);
+}
+.green{
+	border-bottom: 1px solid green; 
+  transform: rotate(216deg);
+  background: linear-gradient(15deg,green 0,green 20%,transparent 0,transparent 28%,rgba(255,255,255,0.1) 50%,transparent 72%,transparent 82.5%,green 0);
+}
+@keyframes animates{
+	from{
+		transform:  rotate3d(.1,2,.6,360deg)
+		
+	}
+	to{
+		transform: rotate3d(.2,1,.5,0deg)
+	}
 }

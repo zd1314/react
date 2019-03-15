@@ -11,8 +11,8 @@ class BubbleDiagram extends Component {
         <div className={'points'}></div>
         <div ref={'clockPie'} style={{
           position: 'absolute',
-          left: -40,
-          top: -3
+          left: 30,
+          top: 5
         }}></div>
       </div>
     )
@@ -28,7 +28,7 @@ class BubbleDiagram extends Component {
   componentDidMount() {
     let me = this;
     let width = 300, height = 300;
-    let R = 90;
+    let R = 60;
     let r = R - 20;
     let smallR = R + 10;
     let startAngle = Math.PI / 6;
@@ -54,7 +54,7 @@ class BubbleDiagram extends Component {
       .data(data)
       .enter()
       .append('g')
-      .attr("transform", `translate(${width / 2},${height / 2})`)
+      .attr("transform", `translate(${width / 2.5},${height / 2.5})`)
 
     g.append('path')
       .attr('d', function (d, i) {

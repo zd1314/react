@@ -13,10 +13,10 @@ class InstrumentPanel extends Component {
   render() {
     return (
       <div ref={'instrument'} style={{
-        width: 280,
-        height: 280,
+        width: 200,
+        height: 200,
         position: 'absolute',
-        left: -47,
+        left: -27,
         top: 0
       }}></div>
     )
@@ -37,11 +37,11 @@ class InstrumentPanel extends Component {
         {
           name: '业务指标',
           type: 'gauge',
-          radius: '65%',
+          radius: '60%',
           axisLine: {
             show: true,
             lineStyle: {
-              width: 20,
+              width: 15,
               color: [
                 [0.3, 'orange'],
                 [0.6, 'aqua'],
@@ -60,10 +60,10 @@ class InstrumentPanel extends Component {
             }
           },
           splitLine: {/**分割线 */
-            length: 20
+            length: 15
           },
           pointer: {/**指针 */
-            length: '60%',
+            length: '40%',
             width: 5
           },
           axisTick: { // 坐标轴小标记
@@ -86,11 +86,11 @@ class InstrumentPanel extends Component {
             // backgroundColor: 'rgba(30,144,255,0.8)',
             // shadowColor: '#fff', //默认透明
             // shadowBlur: 5,
-            offsetCenter: [0, '50%'], // x, y，单位px
+            offsetCenter: [0, '60%'], // x, y，单位px
             textStyle: { // 其余属性默认使用全局文本样式，详见TEXTSTYLE
               fontWeight: 'bolder',
               color: '#fff',
-              fontSize: 24
+              fontSize: 16
             },
             formatter: function (p) {
               return p + '%'

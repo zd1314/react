@@ -1,0 +1,29 @@
+.dialogContentBox{
+  position: absolute;
+  /* background:linear-gradient(left,rgba(0,83,191,.5),rgba(2,12,33,.8)); */
+  background: url('./dialogBg.png') no-repeat;
+  background-size: 100% 100%;
+  box-shadow: #043762 0px 0px 20px;
+}
+.dialogContentBox h3{
+  box-sizing: content-box;
+  font-size: 24px;
+  color:#76fcfd;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 40px;
+}
+.diaLogClose{
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 14px;
+  height: 14px;
+  background:url('./close.png') no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  z-index: 10;
+}

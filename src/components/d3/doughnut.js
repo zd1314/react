@@ -27,7 +27,7 @@ class Doughnut extends Component {
     let width = 300, height = 300;
     let innerRadius = 30, outerRadius = 50;
     let dataset = [40, 10, 20, 30];
-    let color = ['aqua', 'pink', 'yellow', 'blue']
+    let color = ['aqua', 'pink', 'yellow', 'blue'];
     let svg = d3.select(me.refs.doughnutDom)
       .append("svg")
       .attr("width", width)
@@ -41,14 +41,22 @@ class Doughnut extends Component {
       .data(arrData)
       .enter()
       .append("g")
-      .attr("transform", "translate(" + (width / 3) + "," + (height / 3) + ")");
+      .attr("transform", "translate(" + (width / 2.5) + "," + (height / 3.5) + ")");
     arcs.append("path")
       .attr("fill", function (d, i) {
         return color[i];
       })
-      .attr("d", function (d) {
-        return arc(d);
-      });
+      .transition()
+      .duration(2000)
+      .attrTween('d', function (d, i) {
+        let fn = d3.interpolateObject({
+          endAngle: d.startAngle
+        }, d)
+        return function (i) {
+          return arc(fn(i))
+        }
+      })
+
     arcs.append("text")
       .attr("transform", function (d, i) {
         return "translate(" + arc.centroid(d) + ")";

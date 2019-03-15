@@ -54,7 +54,7 @@ class PieCircle extends Component {
       me._global2 = svg.append('g')
         .attr('transform', `translate(${width / 3},${height / 1.4})`);
 
-      me.maxRadius = Math.min(width, height) / 3.5;//半径
+      me.maxRadius = Math.min(width, height) / 4.5;//半径
       me.endAngle = -(3 / 2 * Math.PI);//270
       me.startAngle = 0;
       //定义每一个结束角度

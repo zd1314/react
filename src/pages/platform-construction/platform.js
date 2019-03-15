@@ -25,7 +25,14 @@ import BubbleDiagram from '../../components/d3/bubbleDiagram'
 import Btns from '../../components/common/btn1';
 /**树叶 */
 import Envionmental from '../../components/animate/environmentalCarrying'
-import Rotate from '../../components/animate/rotate'
+import Rotate from '../../components/animate/rotate';
+import Opacity from '../../components/animate/opacity';
+// 该隐患相关企业安全分析
+import Circle from '../../components/water/circle';
+import WaterPolo from '../../components/water/waterPolo';
+//环形图
+import Pie from '../../components/pieChart/pie';
+import List from '../../components/pieChart/list';
 /*
 * 平台建设
 * */
@@ -35,147 +42,76 @@ class Platform extends Component {
     let me = this;
     me.state = {};
     me._tokens = [];
-    me.travelWay = {
-      width: 300,
-      height: 100,
-      left: 36,
-      top: 30,
-      position: 'absolute'
-    };
-    me.creditRing = {
-      width: 300,
-      height: 100,
-      left: 36,
-      top: 230,
-      position: 'absolute'
-    }
-    me.accidentAnalysis = {
-      width: 467,
-      height: 422,
-      left: 36,
-      top: 400,
-      position: 'absolute'
-    }
-    me.waterPolo = {
-      width: 300,
-      height: 100,
-      left: 480,
-      top: 30,
-      position: 'absolute'
-    }
-    me.d3Svg = {
-      width: 300,
-      height: 100,
-      left: 480,
-      top: 160,
-      position: 'absolute'
-    }
-    me.d3Cirle = {
-      width: 300,
-      height: 100,
-      left: 800,
-      top: 30,
-      position: 'absolute'
-    }
-    me.d3ProgressBar = {
-      width: 300,
-      height: 100,
-      left: 1000,
-      top: 30,
-      position: 'absolute'
-    }
-    me.instrumentPanel = {
-      width: 300,
-      height: 100,
-      left: 800,
-      top: 180,
-      position: 'absolute'
-    }
-    me.bubbleDiagram = {
-      width: 500,
-      height: 500,
-      left: 1000,
-      top: 180,
-      position: 'absolute'
-    }
-    me.btns = {
-      width: 200,
-      height: 200,
-      left: 1000,
-      top: 400,
-      position: 'absolute'
-    }
-    me.leaf = {
-      width: 200,
-      height: 200,
-      left: 750,
-      top: 400,
-      position: 'absolute'
-    }
-    me.rotate = {
-      width: 200,
-      height: 200,
-      left: 600,
-      top: 500,
-      position: 'absolute'
-    }
+
   };
+
   render() {
     let me = this;
     return (
       <div className="Allcontents" >
-        <Panel title="红榜区域排行榜" style={me.travelWay}>
+        <Panel title="红榜区域排行榜" width={400} height={180} left={30} top={36}>
           <HosBar width={200} height={178} ref={(ref) => {
             me._hosBar = ref
           }} />
         </Panel>
-        <Panel title="信用排行度" style={me.creditRing}>
-
-          <CreditRing width={200} height={178} ref={(ref) => {
-            me._creditRing = ref
-          }} />
-          < TabCut type={0} changeData={me.CreditRingTabChange.bind(this)} />
+        <Panel title='环形图' width={400} height={180} left={30} top={250}>
+          <Pie />
+          <List style={{ width: '500', height: '370', position: 'absolute', left: 150, top: -10 }} ref={'listRef'} />
         </Panel>
-        <Panel title="事故区域分析" style={me.accidentAnalysis}>
+        <Panel title="事故区域分析" width={400} height={180} left={30} top={450}>
           <Bubble width={500} height={300} />
         </Panel>
-        <Panel title="水球展示" style={me.waterPolo}>
+        <Panel title="水球展示" width={400} height={120} left={480} top={36}>
           <ul style={{
-            width: 300,
+            width: 400,
             height: 200,
             display: "flex"
           }}>
-            <li> <EchartsWaterPolo width={100} height={150} /></li>
-            <li> <EchartsWaterPolo width={100} height={150} /></li>
-            <li> <EchartsWaterPolo width={100} height={150} /></li>
+            <li > <EchartsWaterPolo width={130} height={100} /></li>
+            <li> <EchartsWaterPolo width={130} height={100} /></li>
+            <li> <EchartsWaterPolo width={130} height={100} /></li>
           </ul>
         </Panel>
-        <Panel title="基于D3的demo" style={me.d3Svg}>
-          <DoughnutChart />
-        </Panel>
-        <Panel title="基于D3的饼图" style={me.d3Cirle}>
-          <Doughnut />
-        </Panel>
-        <Panel title="基于D3的进度条" style={me.d3ProgressBar}>
-          <ProgressBar />
-        </Panel>
-        <Panel title="基于echarts的仪表盘" style={me.instrumentPanel}>
-          <InstrumentPanel />
-        </Panel>
-        <Panel title="基于echarts的仪表盘" style={me.bubbleDiagram}>
-          <BubbleDiagram />
-        </Panel>
-        <Panel title="单选按钮" style={me.btns}>
-          < Btns width={15} height={15} top={6} left={0} />
-        </Panel>
 
-        <Panel title="叶子" style={me.leaf}>
-          <Envionmental />
+        <Panel title='动画' width={400} height={200} left={480} top={200}>
+          <Opacity />
         </Panel>
-        <Panel title="旋转" style={me.rotate}>
+        <Panel title="叶子"
+          width={400}
+          height={200}
+          left={480}
+          top={430}>
+          <Envionmental />
           <Rotate />
         </Panel>
-      </div>
+
+        <Panel title="基于D3的饼图" width={300} height={140} left={930} top={30}>
+          <Doughnut />
+        </Panel>
+
+        <Panel title="D3仪表盘"
+          width={300}
+          height={200}
+          left={930}
+          top={190}>
+          <BubbleDiagram />
+        </Panel>
+
+        {/* <Panel title="单选按钮"
+          width={200}
+          height={200}
+          left={1000}
+          top={400}>
+          < Btns width={15} height={15} top={6} left={0} />
+        </Panel> */}
+        <Panel title="环形进度条" width={300} height={200} left={930} top={430}>
+          <div className="waterBox" style={{ position: 'absolute', left: 40, bottom: 60, width: '200px', height: '100%' }}>
+            <Circle style={{ width: '1.4rem', height: '1.4rem', position: 'absolute', left: '30px', top: '110px', zIndex: 10 }} ref={'standardizationCircle'}></Circle>
+            <WaterPolo width={'0.8rem'} top={'1.4rem'} left={'0.6rem'} ref={'standardizationWater'} />
+            <div style={{ position: 'relative', width: '100%', textAlign: 'center', color: '#fff', fontSize: '14px', top: '270px' }}>进行过安全标准化</div>
+          </div>
+        </Panel>
+      </div >
     )
   };
 
@@ -194,11 +130,20 @@ class Platform extends Component {
       // console.log(res)
       me._hosBar._setData(res)
     }));
-    /*信用度*/
-    me._tokens.push(api.creditRing.send().then(res => {
-      // console.log(res)
-      me._creditRing._setData(res)
-    }));
+    let standardization = {
+      value: '20',
+      color: '#00f3fc'
+    };
+    me.refs.standardizationCircle.setData(standardization); /*进行过安全标准化*/
+    me.refs.standardizationWater.setData(standardization);
+    //环形图
+    let obj = {
+      val: [100.00, 50.99, 20.11].sort(function (a, b) {
+        return a < b
+      }),
+      name: ['list1', 'list2', 'list3']
+    }
+    me.refs.listRef.setData(obj);
   };
 
   componentWillUnmount() {

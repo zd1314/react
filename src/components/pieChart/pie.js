@@ -33,8 +33,8 @@ class Pie extends Component {
       legend: {
         type: 'scroll',
         orient: 'vertical',
-        right: '27%',
-        top: ' 10 % ',
+        right: '46%',
+        top: '5%',
         itemWidth: 10,
         itemHeight: 10,
         itemGap: 2,
@@ -58,8 +58,8 @@ class Pie extends Component {
         name: s.name,
         type: 'pie',
         clockWise: false,
-        radius: [(40 - i * 10) + '%', (40 - i * 10) + '%'],
-        center: [150, 100],
+        radius: [(35 - i * 5) + '%', (35 - i * 5) + '%'],
+        center: [100, 80],
         hoverAnimation: false,
         itemStyle: {
           normal: {

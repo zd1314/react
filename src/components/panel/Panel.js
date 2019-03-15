@@ -23,8 +23,9 @@ class Panel extends Component {
       color: '#fff',
       // textShadow:'0px 0px 2px #00486a',
       // textIndent: '0.6rem',
-      background: 'url(" + URL + ") no-repeat left center',
-      backgroundSize: 'contain'
+      // background: 'url(" + URL + ") no-repeat left center',
+      // backgroundSize: 'contain'
+
     };
 
     this.span = {
@@ -42,10 +43,17 @@ class Panel extends Component {
 
   render() {
     return (
-      <div style={this.props.style}>
+      <div style={{
+        width: this.props.width,
+        height: this.props.height,
+        position: 'absolute',
+        left: this.props.left,
+        top: this.props.top,
+        border: '1px solid blue'
+      }}>
         <h1 style={this.h1}>{this.props.title}<span style={this.span}>{this.props.subtext}</span></h1>
         <div style={{
-          height: parseFloat(this.props.style.height) - 0.36 + 'rem'
+          height: parseFloat(this.props.height) - 0.36 + 'rem'
         }}>
           {this.props.children}
         </div>
