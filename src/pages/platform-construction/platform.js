@@ -6,10 +6,11 @@ import './platform.css';
 import Panel from '../../components/panel/Panel';
 import Select from '../../components/select/Select';
 
-import HosBar from '../../components/bar/hosBar'
-import CreditRing from '../../components/bar/creditRing'
-import TabCut from '../../components/bar/tab'
-import Bubble from '../../components/d3/bubble'
+import HosBar from '../../components/bar/hosBar';
+import CreditRing from '../../components/bar/creditRing';
+import TabCut from '../../components/bar/tab';
+import Bubble from '../../components/d3/bubble';
+import Move1 from '../../components/js-animation/move1';
 /*水球展示*/
 import EchartsWaterPolo from '../../components/echartsWaterPolo/echartsWaterPolo';
 /**基于D3的demo */
@@ -17,14 +18,14 @@ import DoughnutChart from '../../components/d3/d3Demo01';
 /**基于D3的环形 */
 import Doughnut from '../../components/d3/doughnut';
 /**基于D3的进度条 */
-import ProgressBar from '../../components/d3/progressBar'
+import ProgressBar from '../../components/d3/progressBar';
 /**基于echarts的仪表盘 */
-import InstrumentPanel from '../../components/pieChart/instrumentPanel'
-import BubbleDiagram from '../../components/d3/bubbleDiagram'
+import InstrumentPanel from '../../components/pieChart/instrumentPanel';
+import BubbleDiagram from '../../components/d3/bubbleDiagram';
 /**单选按钮 */
 import Btns from '../../components/common/btn1';
 /**树叶 */
-import Envionmental from '../../components/animate/environmentalCarrying'
+import Envionmental from '../../components/animate/environmentalCarrying';
 import Rotate from '../../components/animate/rotate';
 import Opacity from '../../components/animate/opacity';
 // 该隐患相关企业安全分析
@@ -59,7 +60,8 @@ class Platform extends Component {
           <List style={{ width: '500', height: '370', position: 'absolute', left: 150, top: -10 }} ref={'listRef'} />
         </Panel>
         <Panel title="事故区域分析" width={400} height={180} left={30} top={450}>
-          <Bubble width={500} height={300} />
+          {/* <Bubble width={500} height={300} /> */}
+          <Move1 />
         </Panel>
         <Panel title="水球展示" width={400} height={120} left={480} top={36}>
           <ul style={{

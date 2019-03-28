@@ -7,6 +7,8 @@ import Panel from '../../components/panel/Panel';
 import Select from '../../components/select/Select';
 /**基于D3的树图 */
 // import Pointer from '../../components/d3/pointer';
+import Cuboid from '../../components/d3/Cuboid';
+import Echarts from '../../components/listStyle/echarts';
 
 /*
 * 运行监控
@@ -24,9 +26,9 @@ class Operation extends Component {
     let me = this;
     return (
       <div className="Allcontents">
-        <Panel title="canvas" width={800} heigt={900} left={0} top={20}>
-
-        </Panel>
+        {/* <Panel title="d3柱状图" width={400} height={200} left={30} top={20}> */}
+          <Echarts />
+        {/* </Panel> */}
       </div>
     )
   };
@@ -39,9 +41,9 @@ class Operation extends Component {
   componentDidMount() {
     let me = this;
     /* test */
-    me._tokens.push(api.treeChart.send().then(res => {
-      me.refs.treeChart.setData(res)
-    }));
+    // me._tokens.push(api.treeChart.send().then(res => {
+    //   me.refs.treeChart.setData(res)
+    // }));
   };
 
   componentWillUnmount() {
