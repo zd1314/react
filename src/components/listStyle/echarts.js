@@ -13,8 +13,8 @@ class Echarts extends React.Component {
                 top: 0
             }}>
                 <div className={'listPath'} style={{
-
                 }} ref='circle'></div>
+                <div className={'pathcircle'}></div>
             </div>
         )
     }
@@ -59,7 +59,7 @@ class Echarts extends React.Component {
         let pictureG = me.svg.append('g')
             .attr('transform', 'translate(169,34)')
             .append('path')
-            .attr('d', 'M80 80 l50 -120 a 45 45 0 0 0 45 45 l20 -20')
+            .attr('d', 'M80 80 l20 -20 l 20 20 a10 10 0 1 0 20 -20 l20 -20 l20 20 a10 10 0 1 0 20 -20 l-20 -20 l20 -20 l-20 -20')
             .attr('stroke-width', 2)
             .attr('stroke', 'yellow')
 

@@ -14,3 +14,14 @@
         offset-distance: 100%;
     }
 }
+.pathcircle{
+    width: 5px;
+    height: 5px;
+    background: aqua;
+    border-radius: 100%;
+    position: absolute;
+    left:170px;
+    top:35px;
+    offset-path: path('M80 80 l20 -20 l 20 20 a10 10 0 1 0 20 -20 l20 -20 l20 20 a10 10 0 1 0 20 -20 l-20 -20 l20 -20 l-20 -20');
+    animation: moves 5s linear infinite;
+}
