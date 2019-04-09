@@ -10,7 +10,12 @@ import HosBar from '../../components/bar/hosBar';
 import CreditRing from '../../components/bar/creditRing';
 import TabCut from '../../components/bar/tab';
 import Bubble from '../../components/d3/bubble';
-import Move1 from '../../components/js-animation/move1';
+/**requestAnimationFrame平移 */
+import Move1 from '../../components/js-animation/translation';
+/** requestAnimationFrame旋转*/
+import Move from '../../components/js-animation/rotate';
+/** requestAnimationFrame来回弹*/
+import Elastic from '../../components/js-animation/elastic'
 /*水球展示*/
 import EchartsWaterPolo from '../../components/echartsWaterPolo/echartsWaterPolo';
 /**基于D3的demo */
@@ -50,18 +55,20 @@ class Platform extends Component {
     let me = this;
     return (
       <div className="Allcontents" >
-        <Panel title="红榜区域排行榜" width={400} height={180} left={30} top={36}>
+        <Panel title="红榜区域排行榜" width={400} height={180} left={30} top={250}>
           <HosBar width={200} height={178} ref={(ref) => {
             me._hosBar = ref
           }} />
         </Panel>
-        <Panel title='环形图' width={400} height={180} left={30} top={250}>
+        <Panel title='环形图' width={400} height={180} left={30} top={450}>
           <Pie />
           <List style={{ width: '500', height: '370', position: 'absolute', left: 150, top: -10 }} ref={'listRef'} />
         </Panel>
-        <Panel title="事故区域分析" width={400} height={180} left={30} top={450}>
+        <Panel title="js动画" width={400} height={180} left={30} top={36}>
           {/* <Bubble width={500} height={300} /> */}
           <Move1 />
+          <Move />
+          <Elastic />
         </Panel>
         <Panel title="水球展示" width={400} height={120} left={480} top={36}>
           <ul style={{
@@ -77,6 +84,7 @@ class Platform extends Component {
 
         <Panel title='动画' width={400} height={200} left={480} top={200}>
           <Opacity />
+
         </Panel>
         <Panel title="叶子"
           width={400}

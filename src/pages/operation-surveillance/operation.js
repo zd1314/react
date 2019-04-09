@@ -26,9 +26,9 @@ class Operation extends Component {
     let me = this;
     return (
       <div className="Allcontents">
-        {/* <Panel title="d3柱状图" width={400} height={200} left={30} top={20}> */}
+        <Panel title="d3柱状图" width={400} height={200} left={30} top={20}>}
           <Echarts />
-        {/* </Panel> */}
+        </Panel>
       </div>
     )
   };

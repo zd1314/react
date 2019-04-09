@@ -1,0 +1,16 @@
+.listPath{
+    width: 6px;
+    height: 6px;
+    background:blue;
+    border-radius:100%;
+    offset-path: path('M95 80 A35 35, 0, 1, 0, 95 95 L115 80 Z');
+    animation: moves 5s linear infinite;
+    position: absolute;
+    left:60px;
+    top:-23px;
+}
+@keyframes moves {
+    100%{
+        offset-distance: 100%;
+    }
+}
