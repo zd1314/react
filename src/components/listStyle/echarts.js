@@ -57,14 +57,25 @@ class Echarts extends React.Component {
             .attr('font-size', 12)
         //不规则图形
         let pictureG = me.svg.append('g')
-            .attr('transform', 'translate(169,34)')
-            .append('path')
+            .attr('transform', 'translate(100,34)')
+        pictureG.append('path')
             .attr('d', 'M80 80 l20 -20 l 20 20 a10 10 0 1 0 20 -20 l20 -20 l20 20 a10 10 0 1 0 20 -20 l-20 -20 l20 -20 l-20 -20')
-            .attr('stroke-width', 2)
+            .attr('stroke-width', 4)
             .attr('stroke', 'yellow')
-
-
-
+            .attr('id', 'picturePath')
+        pictureG.append('text')
+            .append('textPath')
+            .attr('xlink:href', '#picturePath')
+            .text('0123456789010111213141516171819202122')
+            .attr('font-size', 12)
+            .attr('fill', '#fff')
+        // //水滴
+        // let warterG = me.svg.append('g')
+        //     .attr('transform', 'translate(250,40)')
+        //     .append('path')
+        //     .attr('d', 'M80 80 l40 -60 v60 ')
+        //     .attr('stroke-width', 1)
+        //     .attr('stroke', 'blue')
 
     }
 }
